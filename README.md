@@ -1,5 +1,6 @@
 # Census Data Block
 
+This is not an officially supported Google product. This project is not eligible for the [Google Open Source Software Vulnerability Rewards Program](https://bughunters.google.com/open-source-security).
 
 The U.S. Census Bureau’s [American Community Survey (ACS)](https://www.census.gov/programs-surveys/acs) is an annual nationwide survey that collects and produces information on social, economic, housing, and demographic characteristics in the U.S. This Data Block is based on a [publicly available dataset hosted in Google BigQuery](https://console.cloud.google.com/marketplace/details/united-states-census-bureau/acs?id=1282ab4c-78a4-4da5-8af8-cd693fe390ab) as part of the [Google Cloud Public Datasets Program](https://cloud.google.com/public-datasets?_ga=2.233975447.-840160752.1587661252). Here we reference the most recent [5 year estimates](https://www.census.gov/programs-surveys/acs/guidance/estimates.html) for each geographic region currently available in BigQuery.
 
@@ -67,7 +68,6 @@ explore: orders {
 ```
 Here we extend the premade `zcta` explore into `orders` and join them using `zcta.zcta` and `address.zip_code` fields.
 
-
 #### **2. Importing Individual Geographic Layers**
   We can also import geography views individually. In most cases, importing individual geographies requires no additional view declarations --  simply import the view and join it to an explore much like the above example. However, If using `state`, `county` or `census_tract` geographies we’ll need to create an additional view to populate the imported layer with fields. Let’s take a look on how we’d import just the `state` view into our project:
 
@@ -110,11 +110,6 @@ explore: orders {
     relationship: one_to_many
   }
 ```
-
-
-
-
-
 
 ***
 
